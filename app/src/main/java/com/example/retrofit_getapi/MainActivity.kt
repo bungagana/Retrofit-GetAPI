@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import com.example.retrofit_getapi.Network.ApiClient
 import com.example.retrofit_getapi.databinding.ActivityMainBinding
 import retrofit2.Call
 import retrofit2.Callback
@@ -50,7 +51,7 @@ class MainActivity : AppCompatActivity() {
         adapter.setData(data)
     }
     fun Insert(view: View) {
-        val intent = Intent(this, com.example.retrofit_getapi.Insert::class.java)
+        val intent = Intent(this, com.example.retrofit_getapi.Fitur.Insert::class.java)
         startActivity(intent)
     }
     override fun onBackPressed() {

@@ -1,5 +1,9 @@
-package com.example.retrofit_getapi
+package com.example.retrofit_getapi.Network
 
+import com.example.retrofit_getapi.ApiResponse
+import com.example.retrofit_getapi.ResponseDataDeleteMahasiswa
+import com.example.retrofit_getapi.ResponseDataInsertMahasiswa
+import com.example.retrofit_getapi.ResponseDataUpdateMahasiswa
 import retrofit2.Call
 import retrofit2.http.*
 

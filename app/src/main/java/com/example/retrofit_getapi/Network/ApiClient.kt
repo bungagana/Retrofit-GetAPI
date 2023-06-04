@@ -1,7 +1,5 @@
-package com.example.retrofit_getapi
+package com.example.retrofit_getapi.Network
 
-import okhttp3.OkHttpClient
-import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 

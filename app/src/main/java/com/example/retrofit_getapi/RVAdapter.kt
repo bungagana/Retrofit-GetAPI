@@ -12,6 +12,8 @@ import android.widget.Toast
 import androidx.appcompat.widget.AppCompatImageButton
 import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
+import com.example.retrofit_getapi.Fitur.Edit
+import com.example.retrofit_getapi.Network.ApiClient
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -66,16 +68,18 @@ class RVAdapter(
     }
 
     private fun remoteDeleteMahasiswa(nim: String) {
-        ApiClient.apiService.deleteMahasiswa(nim).enqueue(object :
-            Callback<ResponseDataDeleteMahasiswa> {
-            override fun onResponse(call: Call<ResponseDataDeleteMahasiswa>, response: Response<ResponseDataDeleteMahasiswa>) {
+        ApiClient.apiService.deleteMahasiswa(nim).enqueue(object : Callback<ResponseDataDeleteMahasiswa> {
+            override fun onResponse(
+                call: Call<ResponseDataDeleteMahasiswa>,
+                response: Response<ResponseDataDeleteMahasiswa>
+            ) {
                 if (response.isSuccessful) {
                     val apiResponse = response.body()
                     val data = apiResponse?.data
                     if (data != null) {
                         // Find the index of the deleted item in the dataList
                         val index = dataList.indexOfFirst { it.nim == nim }
-                        if (index != -1) {
+                        if (index != -1 && index < dataList.size) {
                             // Remove the item from the dataList
                             dataList.removeAt(index)
                             // Notify the adapter that the item has been removed
@@ -91,6 +95,7 @@ class RVAdapter(
             }
         })
     }
+
 
 
 }
